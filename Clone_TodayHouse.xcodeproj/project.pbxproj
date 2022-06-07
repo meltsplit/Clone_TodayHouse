@@ -7,19 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8703AB3E284E38670005ACC4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8703AB3D284E38670005ACC4 /* MainViewController.swift */; };
 		87FB11E5284E27ED004ABC7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB11E4284E27ED004ABC7F /* AppDelegate.swift */; };
 		87FB11E7284E27ED004ABC7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB11E6284E27ED004ABC7F /* SceneDelegate.swift */; };
-		87FB11E9284E27ED004ABC7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87FB11E8284E27ED004ABC7F /* ViewController.swift */; };
 		87FB11EC284E27ED004ABC7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FB11EA284E27ED004ABC7F /* Main.storyboard */; };
 		87FB11EE284E27EE004ABC7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 87FB11ED284E27EE004ABC7F /* Assets.xcassets */; };
 		87FB11F1284E27EE004ABC7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87FB11EF284E27EE004ABC7F /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		87FB11E1284E27ED004ABC7F /* RisingCamp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RisingCamp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8703AB3D284E38670005ACC4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		87FB11E1284E27ED004ABC7F /* Clone_TodayHouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Clone_TodayHouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		87FB11E4284E27ED004ABC7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		87FB11E6284E27ED004ABC7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		87FB11E8284E27ED004ABC7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		87FB11EB284E27ED004ABC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		87FB11ED284E27EE004ABC7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		87FB11F0284E27EE004ABC7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -37,6 +37,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		872335F7284FB84400738790 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				87FB11ED284E27EE004ABC7F /* Assets.xcassets */,
+				87FB11F2284E27EE004ABC7F /* Info.plist */,
+				87FB11E6284E27ED004ABC7F /* SceneDelegate.swift */,
+				87FB11E4284E27ED004ABC7F /* AppDelegate.swift */,
+				87FB11EF284E27EE004ABC7F /* LaunchScreen.storyboard */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		872335F8284FB84B00738790 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				87FB11EA284E27ED004ABC7F /* Main.storyboard */,
+				8703AB3D284E38670005ACC4 /* MainViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
 		87FB11D8284E27ED004ABC7F = {
 			isa = PBXGroup;
 			children = (
@@ -48,7 +69,7 @@
 		87FB11E2284E27ED004ABC7F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				87FB11E1284E27ED004ABC7F /* RisingCamp1.app */,
+				87FB11E1284E27ED004ABC7F /* Clone_TodayHouse.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,23 +77,19 @@
 		87FB11E3284E27ED004ABC7F /* RisingCamp1 */ = {
 			isa = PBXGroup;
 			children = (
-				87FB11E4284E27ED004ABC7F /* AppDelegate.swift */,
-				87FB11E6284E27ED004ABC7F /* SceneDelegate.swift */,
-				87FB11E8284E27ED004ABC7F /* ViewController.swift */,
-				87FB11EA284E27ED004ABC7F /* Main.storyboard */,
-				87FB11ED284E27EE004ABC7F /* Assets.xcassets */,
-				87FB11EF284E27EE004ABC7F /* LaunchScreen.storyboard */,
-				87FB11F2284E27EE004ABC7F /* Info.plist */,
+				872335F8284FB84B00738790 /* Source */,
+				872335F7284FB84400738790 /* Resource */,
 			);
-			path = RisingCamp1;
+			name = RisingCamp1;
+			path = Clone_TodayHouse;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		87FB11E0284E27ED004ABC7F /* RisingCamp1 */ = {
+		87FB11E0284E27ED004ABC7F /* Clone_TodayHouse */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 87FB11F5284E27EE004ABC7F /* Build configuration list for PBXNativeTarget "RisingCamp1" */;
+			buildConfigurationList = 87FB11F5284E27EE004ABC7F /* Build configuration list for PBXNativeTarget "Clone_TodayHouse" */;
 			buildPhases = (
 				87FB11DD284E27ED004ABC7F /* Sources */,
 				87FB11DE284E27ED004ABC7F /* Frameworks */,
@@ -82,9 +99,9 @@
 			);
 			dependencies = (
 			);
-			name = RisingCamp1;
+			name = Clone_TodayHouse;
 			productName = RisingCamp1;
-			productReference = 87FB11E1284E27ED004ABC7F /* RisingCamp1.app */;
+			productReference = 87FB11E1284E27ED004ABC7F /* Clone_TodayHouse.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -102,7 +119,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 87FB11DC284E27ED004ABC7F /* Build configuration list for PBXProject "RisingCamp1" */;
+			buildConfigurationList = 87FB11DC284E27ED004ABC7F /* Build configuration list for PBXProject "Clone_TodayHouse" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -115,7 +132,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				87FB11E0284E27ED004ABC7F /* RisingCamp1 */,
+				87FB11E0284E27ED004ABC7F /* Clone_TodayHouse */,
 			);
 		};
 /* End PBXProject section */
@@ -138,9 +155,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87FB11E9284E27ED004ABC7F /* ViewController.swift in Sources */,
 				87FB11E5284E27ED004ABC7F /* AppDelegate.swift in Sources */,
 				87FB11E7284E27ED004ABC7F /* SceneDelegate.swift in Sources */,
+				8703AB3E284E38670005ACC4 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +306,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6DNHAHXG9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RisingCamp1/Info.plist;
+				INFOPLIST_FILE = Clone_TodayHouse/Resource/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -317,7 +335,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = T6DNHAHXG9;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = RisingCamp1/Info.plist;
+				INFOPLIST_FILE = Clone_TodayHouse/Resource/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -339,7 +358,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		87FB11DC284E27ED004ABC7F /* Build configuration list for PBXProject "RisingCamp1" */ = {
+		87FB11DC284E27ED004ABC7F /* Build configuration list for PBXProject "Clone_TodayHouse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87FB11F3284E27EE004ABC7F /* Debug */,
@@ -348,7 +367,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		87FB11F5284E27EE004ABC7F /* Build configuration list for PBXNativeTarget "RisingCamp1" */ = {
+		87FB11F5284E27EE004ABC7F /* Build configuration list for PBXNativeTarget "Clone_TodayHouse" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				87FB11F6284E27EE004ABC7F /* Debug */,
