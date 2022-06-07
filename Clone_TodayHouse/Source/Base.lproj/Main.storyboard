@@ -216,8 +216,18 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EFo-qZ-fPl">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="140"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VUU-rK-N1S">
+                                                        <rect key="frame" x="16" y="15" width="382" height="110"/>
+                                                        <color key="backgroundColor" red="0.75193946678321677" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
+                                                    <constraint firstItem="VUU-rK-N1S" firstAttribute="leading" secondItem="EFo-qZ-fPl" secondAttribute="leading" constant="16" id="5dh-GV-SEM"/>
+                                                    <constraint firstItem="VUU-rK-N1S" firstAttribute="top" secondItem="EFo-qZ-fPl" secondAttribute="top" constant="15" id="dTb-Wv-hKe"/>
+                                                    <constraint firstAttribute="trailing" secondItem="VUU-rK-N1S" secondAttribute="trailing" constant="16" id="fvY-Ix-5xk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="VUU-rK-N1S" secondAttribute="bottom" constant="15" id="h7M-Ze-g3B"/>
                                                     <constraint firstAttribute="height" constant="140" id="iw7-MM-p0B"/>
                                                 </constraints>
                                             </view>
@@ -281,6 +291,7 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="2732"/>
                     <connections>
+                        <outlet property="advertiseSlideBtn" destination="VUU-rK-N1S" id="Bgm-nt-nqN"/>
                         <outlet property="mainNavigationBar" destination="sWD-an-0I3" id="jlq-kk-8k7"/>
                     </connections>
                 </viewController>

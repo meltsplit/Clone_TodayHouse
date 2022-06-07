@@ -11,9 +11,13 @@ class MainViewController : UIViewController{
     
     @IBOutlet weak var mainNavigationBar: UINavigationItem!
     
+    @IBOutlet weak var advertiseSlideBtn: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationBarSetting()
+        
+        advertiseSlideBtn.layer.cornerRadius = 10
     }
     
     private func navigationBarSetting(){
