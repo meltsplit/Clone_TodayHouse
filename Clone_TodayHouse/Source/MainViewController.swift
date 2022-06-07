@@ -13,14 +13,34 @@ class MainViewController : UIViewController{
     
     @IBOutlet weak var advertiseSlideBtn: UIView!
     
+    
+    @IBOutlet var categoryBtn: [UIButton]!
+    
+    @IBOutlet var roomImageView: [UIImageView]!
+    
+    
+    
+    @IBAction func bookmarkBtnPressed(_ sender: UIButton) {
+        
+        sender.tintColor = .cyan
+      
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationBarSetting()
+        setComponentLayout()
         
-        advertiseSlideBtn.layer.cornerRadius = 10
+        
     }
     
-    private func navigationBarSetting(){
+    private func setComponentLayout(){
+        advertiseSlideBtn.layer.cornerRadius = 10
+        
+        for i in categoryBtn{
+            i.layer.cornerRadius = 12
+        }
+        for i in roomImageView{
+            i.layer.cornerRadius = 6        }
         
     }
 }
