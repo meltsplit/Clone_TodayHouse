@@ -10,6 +10,17 @@ import UIKit
 class MainViewController : UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var mainNavigationBar: UINavigationItem!
+    
+    private let productDataArray : [ProductData] = [
+        ProductData(productImageName: "c1", productName: "소파"),
+        ProductData(productImageName: "c2", productName: "이불"),
+        ProductData(productImageName: "c3", productName: "조명"),
+        ProductData(productImageName: "c4", productName: "TV"),
+        ProductData(productImageName: "c5", productName: "주방기구"),
+        ProductData(productImageName: "c6", productName: "화분"),
+        ProductData(productImageName: "c7", productName: "수납"),
+        ProductData(productImageName: "c8", productName: "가구"),
+    ]
 
     
     private let bookMarkNavBtn : UIButton = {
@@ -40,6 +51,7 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
     
     @IBOutlet weak var advertiseScrollView: UIScrollView!
     
+    @IBOutlet weak var productCollectionView: UICollectionView!
     
     
     @IBOutlet var categoryBtn: [UIButton]!
@@ -57,11 +69,16 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         setComponentLayer()
         setAdvertiseImage()
         setScrollView()
+        setDelegate()
     }
     
     //MARK: - Custom Method
     
-    
+    private func setDelegate(){
+        productCollectionView.dataSource = self
+        let homeXib = UINib(nibName: "CollectionViewCell", bundle: nil)
+        productCollectionView.register(homeXib, forCellWithReuseIdentifier: "CollectionViewCell")
+    }
     private func setAdvertiseImage(){
         
         for i in 0..<advertiseImageNameArray.count{
@@ -109,5 +126,21 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         
         
     }
+    
+}
+
+extension MainViewController : UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 8
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as? CollectionViewCell else {return UICollectionViewCell() }
+        cell.setData(data: productDataArray[indexPath.row])
+        
+        return cell
+    }
+    
+    
     
 }
