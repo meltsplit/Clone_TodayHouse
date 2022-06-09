@@ -24,24 +24,22 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
 
     
     private let bookMarkNavBtn : UIButton = {
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "bookmark"), for: .normal)
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 25 , height: 25))
+        btn.setBackgroundImage(UIImage(systemName: "bookmark"), for: .normal)
         btn.tintColor = .black
         btn.contentMode = .scaleAspectFit
         return btn
     }()
     private let cartNavBarBtn : UIButton = {
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
-        btn.translatesAutoresizingMaskIntoConstraints = false
-        btn.setImage(UIImage(systemName: "cart"), for: .normal)
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        btn.setBackgroundImage(UIImage(systemName: "cart"), for: .normal)
         btn.tintColor = .black
         btn.contentMode = .scaleAspectFit
         return btn
     }()
     
     private let searchBar : UISearchBar = {
-        let bar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 0))
+        let bar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 280, height: 0))
         bar.placeholder = "오늘의 집 통합검색"
         return bar
     }()
@@ -121,7 +119,7 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         let searchBarItem = UIBarButtonItem(customView: searchBar)
         
         navigationItem.leftBarButtonItem = searchBarItem
-        navigationItem.rightBarButtonItems = [bookmarknavItem,cartNavItem]
+        navigationItem.rightBarButtonItems = [cartNavItem,bookmarknavItem]
         
         
         
