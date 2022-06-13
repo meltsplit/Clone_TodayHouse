@@ -9,6 +9,8 @@ import Foundation
 import UIKit
 class MainViewController : UIViewController, UIScrollViewDelegate{
     
+    //MARK: - Properties
+    
     @IBOutlet weak var mainNavigationBar: UINavigationItem!
     
     private let productDataArray : [ProductData] = [
@@ -22,6 +24,7 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         ProductData(productImageName: "c8", productName: "가구"),
     ]
 
+    var images : [String] = [ "ad1" ,"ad2" ,"ad3" ,"ad4" ,"ad5" ]
     
     private let bookMarkNavBtn : UIButton = {
         let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 25 , height: 25))
@@ -31,7 +34,7 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         return btn
     }()
     private let cartNavBarBtn : UIButton = {
-        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        let btn = UIButton(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
         btn.setBackgroundImage(UIImage(systemName: "cart"), for: .normal)
         btn.tintColor = .black
         btn.contentMode = .scaleAspectFit
@@ -47,7 +50,9 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
     
     
     
-    @IBOutlet weak var advertiseScrollView: UIScrollView!
+    @IBOutlet weak var advertiseImageView: UIImageView!
+    
+    @IBOutlet weak var advertisePageControl: UIPageControl!
     
     @IBOutlet weak var productCollectionView: UICollectionView!
     
@@ -60,14 +65,14 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
     }
     
     let advertiseImageNameArray : Array<String> = ["ad1","ad2","ad3","ad4","ad5"]
+    
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavigationBarItems()
         setComponentLayer()
-        setAdvertiseImage()
-        setScrollView()
         setDelegate()
+        setPageControl()
     }
     
     //MARK: - Custom Method
@@ -77,37 +82,11 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         let homeXib = UINib(nibName: "CollectionViewCell", bundle: nil)
         productCollectionView.register(homeXib, forCellWithReuseIdentifier: "CollectionViewCell")
     }
-    private func setAdvertiseImage(){
-        
-        for i in 0..<advertiseImageNameArray.count{
-            let imageView = UIImageView()
-            imageView.contentMode = .scaleToFill
-            imageView.image = UIImage(named: advertiseImageNameArray[i])
-            let xpos = CGFloat(i)*self.view.bounds.size.width
-            imageView.frame = CGRect(x: xpos, y: 0, width: view.frame.size.width , height: advertiseScrollView.frame.size.height)
-            advertiseScrollView.addSubview(imageView)
-        }
-    }
     
-    private func setScrollView(){
-        advertiseScrollView.contentSize = CGSize(width: view.frame.size.width * 5.0, height: view.frame.height)
-        advertiseScrollView.delegate = self // scroll범위에 따라 pageControl의 값을 바꾸어주기 위한 delegate
-        advertiseScrollView.alwaysBounceVertical = false
-        advertiseScrollView.showsHorizontalScrollIndicator = false
-        advertiseScrollView.showsVerticalScrollIndicator = false
-        advertiseScrollView.isScrollEnabled = true
-        advertiseScrollView.isPagingEnabled = true
-        advertiseScrollView.bounces = false // 경계지점에서 bounce될건지 체크 (첫 or 마지막 페이지에서 바운스 스크롤 효과 여부)
-    }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let page = advertiseScrollView.contentOffset.x/scrollView.frame.width
-    }
-    
+
     
     private func setComponentLayer(){
-        advertiseScrollView.layer.cornerRadius = 10
-        
+        advertiseImageView.layer.cornerRadius = 12
         for i in categoryBtn { i.layer.cornerRadius = 12 }
         for i in roomImageView { i.layer.cornerRadius = 6 }
     }
@@ -125,7 +104,27 @@ class MainViewController : UIViewController, UIScrollViewDelegate{
         
     }
     
+    private func setPageControl(){
+        
+        //페이지 컨트롤의 전체 페이지를 images 배열의 전체 개수 값으로 설정
+        advertisePageControl.numberOfPages = images.count
+                // 페이지 컨트롤의 현재 페이지를 0으로 설정
+        advertisePageControl.currentPage = 0
+                // 페이지 표시 색상을 밝은 회색 설정
+        advertisePageControl.pageIndicatorTintColor = UIColor.lightGray
+                // 현재 페이지 표시 색상을 검정색으로 설정
+        advertisePageControl.currentPageIndicatorTintColor = UIColor.black
+        
+        advertiseImageView.image = UIImage(named: images[0])
+    }
+    
+    @IBAction func advertisePageChanged(_ sender: UIPageControl) {
+        advertiseImageView.image = UIImage(named: images[advertisePageControl.currentPage])
+    }
+    
 }
+
+//MARK: - Collection View DataSource
 
 extension MainViewController : UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -138,7 +137,5 @@ extension MainViewController : UICollectionViewDataSource{
         
         return cell
     }
-    
-    
     
 }
