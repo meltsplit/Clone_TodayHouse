@@ -31,7 +31,7 @@
         <scene sceneID="kDC-sc-yo6">
             <objects>
                 <navigationController id="Zrd-MC-oJU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="스토어" image="homekit" catalog="system" id="1tZ-Dk-Hj2"/>
+                    <tabBarItem key="tabBarItem" title="스토어" image="store" selectedImage="store.fill" id="1tZ-Dk-Hj2"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="z7J-xr-OHb">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -45,7 +45,7 @@
         <scene sceneID="VZ0-t0-L6Y">
             <objects>
                 <navigationController id="xfX-ga-nwc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="인테리어시공" image="hammer" catalog="system" selectedImage="hammer.fill" id="CKm-fC-gyX"/>
+                    <tabBarItem key="tabBarItem" title="인테리어시공" image="work" selectedImage="work.fill" id="CKm-fC-gyX"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="9bp-u8-HMf">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -69,6 +69,21 @@
             </objects>
             <point key="canvasLocation" x="1112" y="428"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zPB-Xy-Mcj">
+            <objects>
+                <navigationController id="ls8-e3-TT2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="plus" selectedImage="plus" id="Mat-UV-bYh"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zEv-TQ-VuM">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CqR-ei-KRh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2061" y="428"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="4Mx-5y-nf0">
             <objects>
@@ -85,6 +100,7 @@
                         <segue destination="Zrd-MC-oJU" kind="relationship" relationship="viewControllers" id="RcB-fo-rNU"/>
                         <segue destination="xfX-ga-nwc" kind="relationship" relationship="viewControllers" id="AZF-e9-bSL"/>
                         <segue destination="tZc-cc-7ie" kind="relationship" relationship="viewControllers" id="cwS-nl-0Cw"/>
+                        <segue destination="ls8-e3-TT2" kind="relationship" relationship="viewControllers" id="hNm-Mm-HuB"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="O3y-0Z-5Be" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -949,13 +965,15 @@
         <image name="h7" width="130" height="114"/>
         <image name="h8" width="130" height="114"/>
         <image name="h9" width="130" height="114"/>
-        <image name="hammer" catalog="system" width="128" height="117"/>
-        <image name="hammer.fill" catalog="system" width="128" height="117"/>
-        <image name="homekit" catalog="system" width="128" height="106"/>
         <image name="house" catalog="system" width="128" height="106"/>
         <image name="house.fill" catalog="system" width="128" height="106"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="plus" width="40" height="40"/>
+        <image name="store" width="24" height="24"/>
+        <image name="store.fill" width="24" height="24"/>
+        <image name="work" width="24" height="27"/>
+        <image name="work.fill" width="24" height="26"/>
         <image name="방1" width="1170" height="1123"/>
         <image name="방2" width="1170" height="837"/>
         <image name="방3" width="1170" height="1334"/>
